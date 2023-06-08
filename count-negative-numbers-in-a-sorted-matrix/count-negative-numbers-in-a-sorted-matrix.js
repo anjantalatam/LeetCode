@@ -10,12 +10,5 @@ var countNegatives = function(grid) {
         spread.push(...g)
     })
 
-    let count = 0
-    spread.forEach(i=>{
-        if( i < 0 ){
-            count++;
-        }
-    })
-
-    return count
+    return spread.reduce((acc,cur) => cur<0 ? ++acc : acc, 0)
 };
